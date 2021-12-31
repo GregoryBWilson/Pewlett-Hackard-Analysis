@@ -51,12 +51,13 @@ ORDER BY rt.emp_no, rt.to_date DESC;
 -- 15) Before you export your table, confirm that it looks like this image:
 -- The unique titles table is ascending ordered by employee number and descending order by the most recent title date.
 -- comment out the INTO to just see the results on screen
-
-
 -- 16) Write another query in the Employee_Database_challenge.sql file to retrieve the number of employees by their most recent job title who are about to retire.
-
-
 -- 17) First, retrieve the number of titles from the Unique Titles table.
+SELECT COUNT(ut.emp_no), ut.title
+-- INTO retiring_titles
+FROM unique_titles as ut
+GROUP BY ut.title
+ORDER BY COUNT(ut.emp_no) DESC;
 
 
 -- 18) Then, create a Retiring Titles table to hold the required information.
