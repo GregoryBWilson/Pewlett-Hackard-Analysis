@@ -2,13 +2,11 @@
 
 ## 1 Overview of the analysis
 
-
-
-
-
-- The purpose of the new analysis is well defined. **(3 pt)**
+Pewlett-Hackard (PH) is a large company that is trying to prepare for an anticipated  “silver tsunami”  as a significant number of baby boomer employees approach retirement age.  I have been working with Bobby and his manager to determine the number of retiring employees per job title, and identify employees who are eligible to participate in a company mentorship program. With our help Pewlett-Hackard will be well prepared to avoid what could be  a human resources and financial nightmare.
 
 ### 1.1 Creation of Entity Diagram
+
+Pewlett-Hackard had been keeping track of employee information using a number of spreadsheets.  These sheets contained sufficient information to complete the desired task, however a great deal of work had to be completed to connect relevant data and extract critical views of interest to the client.  Figure 1 below is an entity relationship diagram (ERD) of the tables that contain to information to be analyzed.  This diagram was created using Quick Database Diagrams Tools (QuickDBD) found at https://app.quickdatabasediagrams.com/ .  Table entities, attributes and relationships can be developed in detail using this tool as can be seen below.
 
 ![This image is an export of the PH QuickDB entity diagram](EmployeeDB.png?lastModify=1640037549 "Figure 1  - Pewlett-Hackard Entity Diagram")
 
@@ -16,25 +14,53 @@
 
 ### 1.2 Building the PH Database
 
+Using the ERD in figure 1, we are then able to develop scripts to build the database schema using pgAdmin on a Postgres 13.5 database server.  The script below, in figure 2, can be found in folder "Pewlett-Hackard-Analysis\Analysis_Projects_Folder\Pewlett-Hackard_Analysis_Folder\Queries" under the file name "schema.sql".  In this method of building the database the foreign key references are build at the same time as the table itself.
+
 ![This is a VS screenshot of the schema.sql code](Building_Managers_Table.png?lastModify=1640037549 "Figure 2  - Building Table & Keys Together")
 
 ***Figure 2  - Building Table & Keys Together***
+
+
+
+If the tables and there interconnections are fully detailed in QuickDBD, it is possible to export the schema to build a database in pgAdmin.  Just to prove this out, I detailed the ERD and exported the schema shown in figure 3 and built two database to that I could compare them - there are identical.  The full schema can be found in the queries folder under the file name "QuickDBD-Pewlett Hackard.sql".  You can see in this script that the foreign key references are all run at the end after all of the tables have been built, this method avoids the problem of having to build the tables in a specific order to avoid referential errors between tables.
 
 ![This is a VS screenshot of the QuickDBD-Pewlett Hackard.sql code](QuickDBD_Constraints_Approach.png?lastModify=1640037549 "Figure 3  - Building Tables First & Adding Constraints Later")
 
 ***Figure 3  - Building Tables First & Adding Constraints Later***
 
+You may wonder why the QuickDBD exported schema has quotes around the table names.  I found out the hard way what without quotes Postgres will make all table name in lower case.  With quote Postgres will accept mixed case names, unfortunately all future references require the use of quotes.  Bottom-line, build everything in QuickDBD with lowercase names if you want to use their scripts to build databases. 
+
+It should also be noted that while these scripts were used to build the database I did make at least one table name change "manager" was changed to "dept_manager".  The changed to the schema had been preserved through the backup features in pgAdmin, the exported schema can be found in the queries folder under the name "PH-EmployeeDB_Schema.sql".
+
 ### 1.3 Importing PH Data for Analysis
 
+The next step was to use the import features of pgAdmin to populate the database table with data held in the six CSV files provided by Pewlett-Hackard.  All the CSV files imported, as well as through created throughout the analysis, can be found in folder: 
 
+"Pewlett-Hackard-Analysis\Analysis_Projects_Folder\Pewlett-Hackard_Analysis_Folder\Data" 
 
+The files provide by PH are list below:
 
+1. departments.csv
+2. dept_emp.csv
+3. dept_manager.csv
+4. employees.csv
+5. salaries.csv
+6. titles.csv
 
 ## 2 Results
 
-- There is a bulleted list with four major points from the two analysis deliverables. **(6 pt)**
+The three section that follow describe the work that has been conducted and the results towards achieving the objectives as stated by the client.  Section 2.1 discusses determining the number of retiring employees by title who are at or nearing retirement age.  Section 2.3 identifies employees eligible for the mentorship program and in section 2.3  we discusses ten additional queries that have been developed to answer other questions and confirmation the results of this analysis.  
 
-  
+Some important observations are as follows:
+
+- The titles table is a complete history of the company with 443,308 entries.
+  - There are multiple entries for employees who have been promoted
+- The employees table is also a complete history of the company with 300,024 entries.
+  - There are entries for employees who are no longer employed by the company
+- The total number of employees currently working at PH is 240,124.
+  - Connecting employee's most receive title from titles tells us who they are.
+- There are a total of 59,990 retired employees.
+  - Not only can this tell us who should not be counted, but it also can be used to verify the other numbers that are being presented to Bobby. 
 
 
 
@@ -94,7 +120,7 @@ The output files can be found at \Analysis Projects Folder\Pewlett-Hackard_Analy
 
 - **
 
-![This is a pgAdmin 4 screenshot of the PH-EmployeeDB database](Deliverable_1_step_21_view(not the same check).png?lastModify=1640037549 "Table 3  - Retiring Titles Table")
+![This is a pgAdmin 4 screenshot of the PH-EmployeeDB database](Deliverable_1_step_21_view(checked).png?lastModify=1640037549 "Table 3  - Retiring Titles Table")
 
 ***Table 3  - Retiring Titles Table***
 
@@ -132,7 +158,7 @@ The output files can be found at \Analysis Projects Folder\Pewlett-Hackard_Analy
 
 
 
-2.3 Extended Data Analysis and Results Confirmation
+### 2.3 Extended Data Analysis and Results Confirmation
 
 - **
 
@@ -145,6 +171,8 @@ The verification SQL scripts file can be found in this directory at Data_Verific
 ### 3 Summary
 
 - The summary addresses the two questions and ***contains two additional queries or tables*** that may provide more insight. **(5 pt)**
+
+https://courses.bootcampspot.com/courses/1177/pages/7-dot-3-5-create-additional-lists?module_item_id=355963
 
 
 
