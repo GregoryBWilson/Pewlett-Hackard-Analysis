@@ -1,8 +1,32 @@
-# Pewlett-Hackard-Analysis
+# Pewlett-Hackard Analysis
 
 ## 1 Overview of the analysis
 
+
+
+
+
 - The purpose of the new analysis is well defined. **(3 pt)**
+
+### 1.1 Creation of Entity Diagram
+
+![This image is an export of the PH QuickDB entity diagram](EmployeeDB.png?lastModify=1640037549 "Figure 1  - Pewlett-Hackard Entity Diagram")
+
+***Figure 1  - Pewlett-Hackard Entity Diagram***
+
+### 1.2 Building the PH Database
+
+![This is a VS screenshot of the schema.sql code](Building_Managers_Table.png?lastModify=1640037549 "Figure 2  - Building Table & Keys Together")
+
+***Figure 2  - Building Table & Keys Together***
+
+![This is a VS screenshot of the QuickDBD-Pewlett Hackard.sql code](QuickDBD_Constraints_Approach.png?lastModify=1640037549 "Figure 3  - Building Tables First & Adding Constraints Later")
+
+***Figure 3  - Building Tables First & Adding Constraints Later***
+
+### 1.3 Importing PH Data for Analysis
+
+
 
 
 
@@ -22,9 +46,9 @@ You will earn a perfect score for Deliverable 1 by completing all requirements b
 
 - A query is written and executed to create a Retirement Titles table for employees who are born between January 1, 1952 and December 31, 1955. **(10 pt)**
 
-![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Retirement_Titles_Table.png?lastModify=1640037549 "Figure 1  - Create Retirement Titles Table")
+![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Retirement_Titles_Table.png?lastModify=1640037549 "Figure 4  - Create Retirement Titles Table")
 
-***Figure 1  - Create Retirement Titles Table***
+***Figure 4  - Create Retirement Titles Table***
 
 - The Retirement Titles table is exported as `retirement_titles.csv`. **(5 pt)**
 
@@ -38,9 +62,9 @@ The output files can be found at \Analysis Projects Folder\Pewlett-Hackard_Analy
 
 - A query is written and executed to create a Unique Titles table that contains the employee number, first and last name, and most recent title. **(15 pt)**
 
-![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Unique_Titles_Table.png?lastModify=1640037549 "Figure 2  - Create Unique Titles Table")
+![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Unique_Titles_Table.png?lastModify=1640037549 "Figure 5  - Create Unique Titles Table")
 
-***Figure 2  - Create Unique Titles Table***
+***Figure 5  - Create Unique Titles Table***
 
 
 
@@ -58,9 +82,9 @@ The output files can be found at \Analysis Projects Folder\Pewlett-Hackard_Analy
 
 - A query is written and executed to create a Retiring Titles table that contains the number of titles filled by employees who are retiring. **(10 pt)**
 
-![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Retiring_Titles_Table.png?lastModify=1640037549 "Figure 3  - Create Retiring Titles Table")
+![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Retiring_Titles_Table.png?lastModify=1640037549 "Figure 6  - Create Retiring Titles Table")
 
-***Figure 3  - Create Retiring Titles Table***
+***Figure 6  - Create Retiring Titles Table***
 
 
 
@@ -86,9 +110,9 @@ You will earn a perfect score for Deliverable 2 by completing all requirements b
 
 - A query is written and executed to create a Mentorship Eligibility table for current employees who were born between January 1, 1965 and December 31, 1965. **(25 pt)**
 
-![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Mentorship_Eligibility_Table.png?lastModify=1640037549 "Figure 4  - Create Mentorship Eligibility Table")
+![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Mentorship_Eligibility_Table.png?lastModify=1640037549 "Figure 7  - Create Mentorship Eligibility Table")
 
-***Figure 4  - Create Mentorship Eligibility Table***
+***Figure 7  - Create Mentorship Eligibility Table***
 
 
 
@@ -112,15 +136,15 @@ The output files can be found at \Analysis Projects Folder\Pewlett-Hackard_Analy
 
 - **
 
-![This is a pgAdmin 4 screenshot of the PH-EmployeeDB database](Deliverables_1_&_2_Data_Varification.png?lastModify=1640037549 "Figure 5  - Result Verification Messages")
+<img src="Deliverables_1_&_2_Data_Varification.png?lastModify=1640037549" alt="This is a pgAdmin 4 screenshot of the PH-EmployeeDB database" title="Figure 8  - Result Verification and Additional Query Messages" style="zoom:120%;" />
 
-***Figure 5  - Result Verification Messages***
+***Figure 8  - Result Verification and Additional Query Messages***
 
 The verification SQL scripts file can be found in this directory at Data_Verification_Queries.sql
 
-### 3.0 Summary
+### 3 Summary
 
-- The summary addresses the two questions and contains two additional queries or tables that may provide more insight. **(5 pt)**
+- The summary addresses the two questions and ***contains two additional queries or tables*** that may provide more insight. **(5 pt)**
 
 
 

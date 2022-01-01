@@ -6,7 +6,7 @@
 -- Question #1 - Why does QuickDBD(QDBD) use "" around all table and attribute names and we do not
 -- Observation #1 - Looks like I can edit the VARCHAR in QuickDBD to be VARCHAR(4) or whatever I need
 -- Question #2 - Why does QDBD used CONSTRAINT pk_Departments PRIMARY KEY (dept_no) and Carleton just do this PRIMARY KEY (dept_no), UNIQUE (dept_name)
--- Observation #2 - Unique can be added to the end of a atribute definition in QDBD
+-- Observation #2 - Unique can be added to the end of a attribute definition in QDBD
 -- Observation #3 - QDBD does not force types to use upper case, you need to do that.
 -- Question #3 - I can't understand having two "Primary Keys" how can that be?
 -- Question #4 - Why are salaries INT instead of MONEY?
@@ -26,7 +26,7 @@ CREATE TABLE Titles (
     title VARCHAR   NOT NULL,
     from_date DATE   NOT NULL,
     to_date DATE   NOT NULL,
-FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
 CREATE TABLE Salaries (
@@ -53,8 +53,8 @@ CREATE TABLE Dept_Emp (
     dept_no VARCHAR(4)   NOT NULL,
     from_date DATE   NOT NULL,
     to_date DATE   NOT NULL,
-FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE Managers (
     emp_no INT   NOT NULL,
     from_date DATE   NOT NULL,
     to_date DATE   NOT NULL,
-FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
