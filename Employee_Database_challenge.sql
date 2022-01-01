@@ -21,10 +21,10 @@ SELECT e.emp_no,
     t.from_date,
     t.to_date
 INTO retirement_titles
-FROM employees as e
-LEFT JOIN titles as t
+FROM employees AS e
+LEFT JOIN titles AS t
 ON (e.emp_no = t.emp_no)
-WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY e.emp_no
 
 -- 7) Before you export your table, confirm that it looks like this image:
@@ -47,7 +47,7 @@ SELECT DISTINCT ON (rt.emp_no) rt.emp_no,
     rt.last_name,
     rt.title
 INTO unique_titles
-FROM retirement_titles as rt
+FROM retirement_titles AS rt
 WHERE (rt.to_date = '9999-01-01')
 ORDER BY rt.emp_no, rt.to_date DESC;
 
@@ -62,7 +62,7 @@ ORDER BY rt.emp_no, rt.to_date DESC;
 
 SELECT COUNT(ut.emp_no), ut.title
 INTO retiring_titles
-FROM unique_titles as ut
+FROM unique_titles AS ut
 GROUP BY ut.title
 ORDER BY COUNT(ut.emp_no) DESC;
 
@@ -71,6 +71,7 @@ ORDER BY COUNT(ut.emp_no) DESC;
 -- The retiring title table ordered by title and sorted by count in descending order.
 
 -- *** IT LOOKS LIKE THIS BUT THE COUNTS ARE DIFFERENT, I WILL REVIEW TO SEE IF IT IS A DATA ISSUE OR A SQL ISSUE ***
+-- *** I CREATED SQL QUERIES IN FILE "Data_Verification_Queries.sql" AND VERIFIED ALL OF MY COUNTS ARE CORRECT ***
 
 -- 22) Save your Employee_Database_challenge.sql file in your Queries folder in the Pewlett-Hackard folder.
 
@@ -98,11 +99,11 @@ SELECT DISTINCT ON (t.emp_no) e.emp_no,
 	de.from_date,
     de.to_date,
 	t.title
-INTO mentorship_eligibilty
-FROM employees as e
-INNER JOIN dept_emp as de
+INTO mentorship_eligibility
+FROM employees AS e
+INNER JOIN dept_emp AS de
 ON (e.emp_no = de.emp_no)
-INNER JOIN titles as t
+INNER JOIN titles AS t
 ON (e.emp_no = t.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
      AND (de.to_date = '9999-01-01');
