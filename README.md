@@ -22,13 +22,13 @@ You will earn a perfect score for Deliverable 1 by completing all requirements b
 
 - A query is written and executed to create a Retirement Titles table for employees who are born between January 1, 1952 and December 31, 1955. **(10 pt)**
 
-![This is a VS screenshot of the Employee_Database_challenge.sql code](file://C:\Users\Greg\Carleton\Pewlett-Hackard-Analysis\Create_Retirement_Titles_Table.png?lastModify=1640037549 "Figure 1  - Create Retirement Titles Table")
+![This is a VS screenshot of the Employee_Database_challenge.sql code](Create_Retirement_Titles_Table.png?lastModify=1640037549 "Figure 1  - Create Retirement Titles Table")
 
 ***Figure 1  - Create Retirement Titles Table***
 
 - The Retirement Titles table is exported as `retirement_titles.csv`. **(5 pt)**
 
-C:\Users\Greg\Carleton\Pewlett-Hackard-Analysis\Analysis Projects Folder\Pewlett-Hackard_Analysis Folder\Data
+https://github.com/GregoryBWilson/Pewlett-Hackard-Analysis/blob/main/Analysis%20Projects%20Folder/Pewlett-Hackard_Analysis%20Folder/Data/retirement_titles.csv
 
 - A query is written and executed to create a Unique Titles table that contains the employee number, first and last name, and most recent title. **(15 pt)**
 - The Unique Titles table is exported as `unique_titles.csv`. **(5 pt)**
